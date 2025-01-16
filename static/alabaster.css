@@ -145,14 +145,16 @@ div.sphinxsidebar p {
 div.sphinxsidebar ul {
     margin: 10px 0;
     padding: 0;
-    color: #000;
+    color: #000000;
 }
 
 div.sphinxsidebar ul li.toctree-l1 > a {
+    color: #000;
     font-size: 120%;
 }
 
 div.sphinxsidebar ul li.toctree-l2 > a {
+    color: #000;
     font-size: 110%;
 }
 
@@ -349,9 +351,6 @@ pre, tt, code {
     display: block;
 }
 
-img.screenshot {
-}
-
 tt.descname, tt.descclassname, code.descname, code.descclassname {
     font-size: 0.95em;
 }
@@ -516,7 +515,7 @@ a:hover tt, a:hover code {
 
     div.documentwrapper {
         float: none;
-        background: #fff;
+        background: #ffffff00;
         margin-left: 0;
         margin-top: 0;
         margin-right: 0;
@@ -529,13 +528,13 @@ a:hover tt, a:hover code {
         width: unset;
         margin: 50px -30px -20px -30px;
         padding: 10px 20px;
-        background: #333;
-        color: #FFF;
+        background: #dfdff6;
+        color: #040404;
     }
 
     div.sphinxsidebar h3, div.sphinxsidebar h4, div.sphinxsidebar p,
     div.sphinxsidebar h3 a {
-        color: #fff;
+        color: #000000;
     }
 
     div.sphinxsidebar a {
