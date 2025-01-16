@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installation &#8212; ImputeVSS  documentation</title>
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="static/alabaster.css" />
+    <script src="static/documentation_options.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api_reference.html" />
+    <link rel="prev" title="Pipeline Management" href="pipeline_management.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h1>
+<p>This section provides a detailed guide to setting up and installing ImputeVSS on your local system. Follow the instructions carefully to ensure a smooth setup and avoid potential issues.</p>
+<section id="system-requirements">
+<h2>System Requirements<a class="headerlink" href="#system-requirements" title="Link to this heading">¶</a></h2>
+<p>Before installing ImputeVSS, ensure that your system meets the following prerequisites:</p>
+<ol class="arabic simple">
+<li><p>Python 3.12 or higher
+- Python serves as the core programming language for ImputeVSS.
+- Download and install the latest version of Python from the [official Python website](<a class="reference external" href="https://www.python.org/downloads/">https://www.python.org/downloads/</a>).</p></li>
+<li><p>Ollama Desktop
+- Install Ollama from <a class="reference external" href="https://ollama.com/">https://ollama.com/</a> and ensure it is running on your system. Also install python package of Ollama in your environment.</p></li>
+</ol>
+</section>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">¶</a></h2>
+<p>ImputeVSS relies on a range of Python libraries for its core functionalities. These libraries are listed in the <cite>requirements.txt</cite> file. Install the dependencies using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</section>
+<section id="key-dependencies">
+<h2>Key Dependencies<a class="headerlink" href="#key-dependencies" title="Link to this heading">¶</a></h2>
+<p>The primary libraries required for ImputeVSS include:</p>
+<ul class="simple">
+<li><p>Flask: A lightweight web framework for building the web interface.</p></li>
+<li><p>pandas: Used for data manipulation and analysis.</p></li>
+<li><p>numpy: Provides support for numerical operations and array processing.</p></li>
+<li><p>scikit-learn: Implements advanced imputation methods such as KNN and MICE.</p></li>
+<li><p>scipy: Supports statistical computations for analysis.</p></li>
+<li><p>ollama: Enables integration with AI models for generating imputation recommendations.</p></li>
+</ul>
+<p>For a complete list of dependencies, refer to the <cite>requirements.txt</cite> file included in the project.</p>
+</section>
+<section id="file-structure">
+<h2>File Structure<a class="headerlink" href="#file-structure" title="Link to this heading">¶</a></h2>
+<p>Organize your project directory as follows to maintain clarity and enable seamless development:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>imputevss/
+├── app.py                # Main application file
+├── requirements.txt      # Dependency list
+├── static/               # Static files (CSS, JS, images)
+│   ├── css/              # Stylesheets for the UI
+│   ├── js/               # JavaScript files
+│   ├── images/           # Images and logos
+└── templates/            # HTML templates
+    ├── index.html        # Main HTML page
+</pre></div>
+</div>
+</section>
+<section id="step-by-step-installation-guide">
+<h2>Step-by-Step Installation Guide<a class="headerlink" href="#step-by-step-installation-guide" title="Link to this heading">¶</a></h2>
+<p>Follow these steps to set up ImputeVSS:</p>
+<ol class="arabic">
+<li><p>Clone the Repository from GitHub.</p></li>
+<li><p>Set Up a Virtual Environment (Optional but Recommended)
+A virtual environment ensures isolation of dependencies for the project.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate<span class="w">      </span><span class="c1"># On Linux/Mac</span>
+venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">         </span><span class="c1"># On Windows</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install Dependencies
+Install all required libraries by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</pre></div>
+</div>
+</li>
+<li><p>Verify Installation
+Test that all dependencies are correctly installed by starting the Flask application:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>app.py
+</pre></div>
+</div>
+<p>You should see an output indicating that the application is running (e.g., “Running on <a class="reference external" href="http://127.0.0.1:5000">http://127.0.0.1:5000</a>”). Open this URL in your web browser to access ImputeVSS.</p>
+</li>
+</ol>
+</section>
+<section id="optional-steps">
+<h2>Optional Steps<a class="headerlink" href="#optional-steps" title="Link to this heading">¶</a></h2>
+</section>
+<section id="configuring-ai-integration-with-ollama">
+<h2>Configuring AI Integration with Ollama<a class="headerlink" href="#configuring-ai-integration-with-ollama" title="Link to this heading">¶</a></h2>
+<ol class="arabic">
+<li><p>Ensure that Ollama is installed on your system.</p></li>
+<li><p>Verify that Ollama is running by executing in your environment console:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ollama<span class="w"> </span>list
+</pre></div>
+</div>
+<p>If the command outputs a list of models, Ollama is configured correctly.</p>
+</li>
+<li><p>Pull the model(s) from Ollama by running:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ollama<span class="w"> </span>pull<span class="w"> </span>&lt;model-name&gt;
+</pre></div>
+</div>
+</li>
+</ol>
+<ol class="arabic simple" start="3">
+<li><p>In the ImputeVSS interface, use the “Check AI Dependency” button to confirm integration.</p></li>
+</ol>
+</section>
+<section id="customizing-the-application">
+<h2>Customizing the Application<a class="headerlink" href="#customizing-the-application" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>You can modify the Flask configuration (e.g., secret keys, upload folders) in the <cite>app.py</cite> file to suit your requirements.</p></li>
+<li><p>For front-end customization, edit the files in the <cite>static/</cite> and <cite>templates/</cite> directories.</p></li>
+</ul>
+</section>
+<section id="troubleshooting-installation">
+<h2>Troubleshooting Installation<a class="headerlink" href="#troubleshooting-installation" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Missing Dependencies
+If any required library fails to install:
+- Ensure that Python and pip are correctly installed and updated.
+- Run <cite>pip install &lt;package_name&gt;</cite> to manually install the missing dependency.</p></li>
+<li><p>Flask Server Not Starting
+- Check for errors in the terminal.
+- Ensure the correct Python version is being used.
+- If you are using a virtual environment, activate it before running the application.</p></li>
+<li><p>Ollama Errors
+- Ensure Ollama is installed and running on your system.
+- Use the “Check AI Dependency” feature to verify connectivity.</p></li>
+</ol>
+<p>Once all steps are completed, you are ready to use ImputeVSS for data imputation and analysis!</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<a href="index.html"><img style="margin-bottom: 50px;" src="static/imputevss-logo.svg" alt=""></a>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#system-requirements">System Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#key-dependencies">Key Dependencies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#file-structure">File Structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#step-by-step-installation-guide">Step-by-Step Installation Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-steps">Optional Steps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#configuring-ai-integration-with-ollama">Configuring AI Integration with Ollama</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#customizing-the-application">Customizing the Application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-installation">Troubleshooting Installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline_management.html">Pipeline Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai_integration.html">AI Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a></li>
+
+</ul>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Vartul Shrivastava and Shekhar Shukla.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/installation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,19 @@
+Pipeline Management
+===================
+
+What is a Pipeline?
+-------------------
+
+A pipeline is a sequence of imputation steps applied to a dataset. It ensures consistency and repeatability across data-cleaning workflows.
+
+Managing Pipelines
+------------------
+
+1. **Saving a Pipeline:**
+   - After applying imputation methods, click **Export Pipeline** to save the steps as a JSON file.
+
+2. **Loading a Pipeline:**
+   - Use the **Import Pipeline** button to load a previously saved pipeline.
+
+3. **Applying Pipelines:**
+   - After loading a pipeline, click **Apply Pipeline** to execute the steps sequentially.

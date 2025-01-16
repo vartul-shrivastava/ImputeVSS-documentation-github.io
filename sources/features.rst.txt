@@ -1,0 +1,28 @@
+Features
+========
+
+ImputeVSS provides a range of features to simplify data imputation and analysis.
+
+1. **Visualizing Missing Data:**
+   - Heatmaps for quick visualization.
+   - Column-level missing value counts.
+
+2. **Imputation Techniques:**
+   - Supported methods: mean, median, mode, constant, KNN, MICE, random sampling.
+   - Advanced methods like complete-case analysis.
+
+3. **Statistical Comparisons:**
+   - Compare original and imputed data.
+   - Metrics include mean, median, standard deviation, skewness, and kurtosis.
+   - KDE overlap and KS statistics for numeric data.
+
+4. **AI-Based Recommendations:**
+   - Generate insights from imputation statistics.
+   - Tailored suggestions for the best imputation methods.
+
+5. **Pipeline Management:**
+   - Save pipelines for consistent imputation across projects.
+   - Load and apply saved pipelines.
+
+6. **Exporting Results:**
+   - Download imputed datasets in CSV format.

@@ -1,0 +1,135 @@
+Troubleshooting
+===============
+
+This section provides guidance for resolving common issues encountered while using ImputeVSS. It also includes debugging tips to help identify and fix errors effectively.
+
+Common Issues
+-------------
+
+CSV Upload Errors
+-----------------
+
+The system may encounter issues during dataset upload. Here are potential causes and solutions:
+
+- Ensure the file has a `.csv` extension:
+  - Only files with a `.csv` extension are supported.
+  - Verify the file type before uploading.
+
+- Check for proper formatting:
+  - Ensure the file uses a consistent delimiter (e.g. commas).
+  - Avoid empty headers or irregular column names.
+
+- Validate data integrity:
+  - Ensure the dataset does not contain corrupt or non-UTF-8 encoded text.
+  - Open the file in a text editor or spreadsheet software to confirm its structure.
+
+Missing Values Not Imputing
+---------------------------
+
+If the imputation methods are not addressing missing values, check the following:
+
+- Verify the presence of missing values:
+  - Use the heatmap or missing value indicators in the interface to confirm the existence of missing data in the column.
+
+- Ensure the correct imputation method is selected:
+  - Numeric columns should use methods like mean, median, or KNN.
+  - Categorical columns require methods like mode or constant.
+
+- Handle unsupported data types:
+  - Columns with mixed data types may need preprocessing (e.g., converting all values to numeric or categorical).
+
+AI Integration Errors
+---------------------
+
+AI-based recommendations may fail due to issues with Ollama integration. Follow these steps:
+
+- Check if Ollama is running:
+  - Use the "Check AI Dependency" button to verify connectivity.
+  - Alternatively, run the command `ollama list` in your terminal to confirm Ollama is operational.
+
+- Ensure an AI model is selected:
+  - Use the dropdown menu to select an available model.
+  - Verify the selected model is compatible with your system.
+
+- Test the AI configuration:
+  - Use a simple input to verify that the AI is responding correctly.
+  - Check for errors in the Flask logs if the response is empty or malformed.
+
+Pipeline Issues
+---------------
+
+Problems with saving or applying pipelines may arise due to:
+
+- Invalid Pipeline Format:
+  - Ensure the pipeline file is a valid JSON and follows the expected structure.
+  - Avoid manually editing the pipeline file unless necessary.
+
+- Incomplete Pipeline Steps:
+  - Verify all required steps are added to the pipeline before exporting.
+
+- Error during pipeline application:
+  - Check if the pipeline references columns or methods that are no longer valid in the current dataset.
+
+Download Errors
+---------------
+
+If the imputed dataset is not downloading correctly:
+
+- Verify data processing is complete:
+  - Ensure all imputation methods have been applied, and the dataset is free of errors.
+
+- Check for browser download settings:
+  - Some browsers block downloads by default. Ensure downloads are enabled.
+
+Debugging
+---------
+
+Using Flask Logs
+----------------
+
+Flask provides detailed error logs in the terminal where the application is running. These logs can help identify issues such as:
+
+- Missing or invalid input data.
+- Errors during data processing (e.g., unsupported imputation methods).
+- AI integration failures (e.g., connectivity issues with Ollama).
+
+Browser Developer Tools
+-----------------------
+
+Use the developer tools in your web browser to debug client-side issues:
+
+- Inspect Network Requests:
+  - Check for failed requests or incorrect payloads in the **Network** tab.
+  - Look for error codes such as `400 (Bad Request)` or `500 (Internal Server Error)`.
+
+- Inspect Console Logs:
+  - Review the **Console** tab for JavaScript errors or warnings.
+  - Identify issues related to front-end behavior, such as missing elements or event handler errors.
+
+Reproduce the Issue
+-------------------
+
+Reproducing the problem step-by-step can help isolate its cause:
+
+1. Record the exact actions leading to the issue.
+2. Test the application with smaller or simpler datasets.
+3. Check if the issue persists after restarting the Flask server or clearing browser cache.
+
+Tips for Preventing Issues
+---------------------------
+
+- Use Clean Datasets:
+  - Preprocess your datasets to ensure consistent formatting and valid data types before uploading.
+
+- Regularly Update Dependencies:
+  - Run `pip install --upgrade -r requirements.txt` periodically to ensure all libraries are up to date.
+
+- Test New Features in a Development Environment:
+  - Make changes or test new features in a local environment before deploying to production.
+
+- Maintain Backups:
+  - Keep copies of your original datasets and exported pipelines to prevent data loss.
+
+---
+
+By following these troubleshooting steps and debugging techniques, you can quickly identify and resolve most issues encountered while using ImputeVSS.

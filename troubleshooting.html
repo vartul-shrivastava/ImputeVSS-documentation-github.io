@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Troubleshooting &#8212; ImputeVSS  documentation</title>
+    <link rel="stylesheet" type="text/css" href="static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="static/basic.css" />
+    <link rel="stylesheet" type="text/css" href="static/alabaster.css" />
+    <script src="static/documentation_options.js"></script>
+    <script src="static/doctools.js"></script>
+    <script src="static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API Reference" href="api_reference.html" />
+    <link rel="prev" title="Pipeline Management" href="pipeline_management.html" />
+   
+  <link rel="stylesheet" href="static/custom.css" type="text/css" />
+  
+
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="troubleshooting">
+<h1>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Link to this heading">¶</a></h1>
+<p>This section provides guidance for resolving common issues encountered while using ImputeVSS. It also includes debugging tips to help identify and fix errors effectively.</p>
+<section id="common-issues">
+<h2>Common Issues<a class="headerlink" href="#common-issues" title="Link to this heading">¶</a></h2>
+</section>
+<section id="csv-upload-errors">
+<h2>CSV Upload Errors<a class="headerlink" href="#csv-upload-errors" title="Link to this heading">¶</a></h2>
+<p>The system may encounter issues during dataset upload. Here are potential causes and solutions:</p>
+<ul class="simple">
+<li><p>Ensure the file has a <cite>.csv</cite> extension:
+- Only files with a <cite>.csv</cite> extension are supported.
+- Verify the file type before uploading.</p></li>
+<li><p>Check for proper formatting:
+- Ensure the file uses a consistent delimiter (e.g. commas).
+- Avoid empty headers or irregular column names.</p></li>
+<li><p>Validate data integrity:
+- Ensure the dataset does not contain corrupt or non-UTF-8 encoded text.
+- Open the file in a text editor or spreadsheet software to confirm its structure.</p></li>
+</ul>
+</section>
+<section id="missing-values-not-imputing">
+<h2>Missing Values Not Imputing<a class="headerlink" href="#missing-values-not-imputing" title="Link to this heading">¶</a></h2>
+<p>If the imputation methods are not addressing missing values, check the following:</p>
+<ul class="simple">
+<li><p>Verify the presence of missing values:
+- Use the heatmap or missing value indicators in the interface to confirm the existence of missing data in the column.</p></li>
+<li><p>Ensure the correct imputation method is selected:
+- Numeric columns should use methods like mean, median, or KNN.
+- Categorical columns require methods like mode or constant.</p></li>
+<li><p>Handle unsupported data types:
+- Columns with mixed data types may need preprocessing (e.g., converting all values to numeric or categorical).</p></li>
+</ul>
+</section>
+<section id="ai-integration-errors">
+<h2>AI Integration Errors<a class="headerlink" href="#ai-integration-errors" title="Link to this heading">¶</a></h2>
+<p>AI-based recommendations may fail due to issues with Ollama integration. Follow these steps:</p>
+<ul class="simple">
+<li><p>Check if Ollama is running:
+- Use the “Check AI Dependency” button to verify connectivity.
+- Alternatively, run the command <cite>ollama list</cite> in your terminal to confirm Ollama is operational.</p></li>
+<li><p>Ensure an AI model is selected:
+- Use the dropdown menu to select an available model.
+- Verify the selected model is compatible with your system.</p></li>
+<li><p>Test the AI configuration:
+- Use a simple input to verify that the AI is responding correctly.
+- Check for errors in the Flask logs if the response is empty or malformed.</p></li>
+</ul>
+</section>
+<section id="pipeline-issues">
+<h2>Pipeline Issues<a class="headerlink" href="#pipeline-issues" title="Link to this heading">¶</a></h2>
+<p>Problems with saving or applying pipelines may arise due to:</p>
+<ul class="simple">
+<li><p>Invalid Pipeline Format:
+- Ensure the pipeline file is a valid JSON and follows the expected structure.
+- Avoid manually editing the pipeline file unless necessary.</p></li>
+<li><p>Incomplete Pipeline Steps:
+- Verify all required steps are added to the pipeline before exporting.</p></li>
+<li><p>Error during pipeline application:
+- Check if the pipeline references columns or methods that are no longer valid in the current dataset.</p></li>
+</ul>
+</section>
+<section id="download-errors">
+<h2>Download Errors<a class="headerlink" href="#download-errors" title="Link to this heading">¶</a></h2>
+<p>If the imputed dataset is not downloading correctly:</p>
+<ul class="simple">
+<li><p>Verify data processing is complete:
+- Ensure all imputation methods have been applied, and the dataset is free of errors.</p></li>
+<li><p>Check for browser download settings:
+- Some browsers block downloads by default. Ensure downloads are enabled.</p></li>
+</ul>
+</section>
+<section id="debugging">
+<h2>Debugging<a class="headerlink" href="#debugging" title="Link to this heading">¶</a></h2>
+</section>
+<section id="using-flask-logs">
+<h2>Using Flask Logs<a class="headerlink" href="#using-flask-logs" title="Link to this heading">¶</a></h2>
+<p>Flask provides detailed error logs in the terminal where the application is running. These logs can help identify issues such as:</p>
+<ul class="simple">
+<li><p>Missing or invalid input data.</p></li>
+<li><p>Errors during data processing (e.g., unsupported imputation methods).</p></li>
+<li><p>AI integration failures (e.g., connectivity issues with Ollama).</p></li>
+</ul>
+</section>
+<section id="browser-developer-tools">
+<h2>Browser Developer Tools<a class="headerlink" href="#browser-developer-tools" title="Link to this heading">¶</a></h2>
+<p>Use the developer tools in your web browser to debug client-side issues:</p>
+<ul class="simple">
+<li><p>Inspect Network Requests:
+- Check for failed requests or incorrect payloads in the <strong>Network</strong> tab.
+- Look for error codes such as <cite>400 (Bad Request)</cite> or <cite>500 (Internal Server Error)</cite>.</p></li>
+<li><p>Inspect Console Logs:
+- Review the <strong>Console</strong> tab for JavaScript errors or warnings.
+- Identify issues related to front-end behavior, such as missing elements or event handler errors.</p></li>
+</ul>
+</section>
+<section id="reproduce-the-issue">
+<h2>Reproduce the Issue<a class="headerlink" href="#reproduce-the-issue" title="Link to this heading">¶</a></h2>
+<p>Reproducing the problem step-by-step can help isolate its cause:</p>
+<ol class="arabic simple">
+<li><p>Record the exact actions leading to the issue.</p></li>
+<li><p>Test the application with smaller or simpler datasets.</p></li>
+<li><p>Check if the issue persists after restarting the Flask server or clearing browser cache.</p></li>
+</ol>
+</section>
+<section id="tips-for-preventing-issues">
+<h2>Tips for Preventing Issues<a class="headerlink" href="#tips-for-preventing-issues" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p>Use Clean Datasets:
+- Preprocess your datasets to ensure consistent formatting and valid data types before uploading.</p></li>
+<li><p>Regularly Update Dependencies:
+- Run <cite>pip install –upgrade -r requirements.txt</cite> periodically to ensure all libraries are up to date.</p></li>
+<li><p>Test New Features in a Development Environment:
+- Make changes or test new features in a local environment before deploying to production.</p></li>
+<li><p>Maintain Backups:
+- Keep copies of your original datasets and exported pipelines to prevent data loss.</p></li>
+</ul>
+<p>—</p>
+<p>By following these troubleshooting steps and debugging techniques, you can quickly identify and resolve most issues encountered while using ImputeVSS.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<a href="index.html"><img style="margin-bottom: 50px;" src="static/imputevss-logo.svg" alt=""></a>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Documentation Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="features.html">Features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pipeline_management.html">Pipeline Management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ai_integration.html">AI Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Troubleshooting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#common-issues">Common Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#csv-upload-errors">CSV Upload Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#missing-values-not-imputing">Missing Values Not Imputing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ai-integration-errors">AI Integration Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pipeline-issues">Pipeline Issues</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#download-errors">Download Errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#debugging">Debugging</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-flask-logs">Using Flask Logs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#browser-developer-tools">Browser Developer Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reproduce-the-issue">Reproduce the Issue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tips-for-preventing-issues">Tips for Preventing Issues</a></li>
+</ul>
+</li>
+
+</ul>
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Vartul Shrivastava and Shekhar Shukla.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.1.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/troubleshooting.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

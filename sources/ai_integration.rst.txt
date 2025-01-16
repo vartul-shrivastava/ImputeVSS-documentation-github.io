@@ -1,0 +1,21 @@
+AI Integration
+==============
+
+ImputeVSS integrates with Ollama to provide AI-based recommendations for data imputation.
+
+Steps for AI Summaries
+----------------------
+
+1. **Set Up AI:**
+   - Ensure Ollama is installed and running.
+
+2. **Customize the Prompt (Optional):**
+   - Edit the AI prompt via the **Customize Prompt** button.
+   - Include `{table}` in the prompt to provide context from the statistics table.
+
+3. **Select an AI Model:**
+   - Choose a model from the dropdown menu.
+
+4. **Generate a Summary:**
+   - Click **Get AI Recommendation** to generate an AI-based summary.
+

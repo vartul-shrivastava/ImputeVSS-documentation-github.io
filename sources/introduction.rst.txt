@@ -1,0 +1,54 @@
+Introduction
+============
+
+**ImputeVSS** is a comprehensive web-based toolkit designed to streamline the management of missing data in datasets. It provides users with intuitive tools to visualize missing values, apply diverse imputation methods, and analyze results using detailed statistical metrics. The toolkit is versatile and supports a range of use cases, from basic data cleaning to advanced statistical workflows.
+
+Key Features
+------------
+
+1. **User-Friendly Web Interface:**
+   - Seamlessly upload datasets.
+   - Visualize missing values using heatmaps and summary statistics.
+   - Explore both column-level and dataset-wide data characteristics.
+
+2. **Comprehensive Imputation Techniques:**
+   - A wide range of methods for handling missing data, including:
+     - **Basic techniques**: Mean, median, and mode imputation.
+     - **Advanced techniques**: K-Nearest Neighbors (KNN), Multiple Imputation by Chained Equations (MICE), and random sampling.
+     - **Customizable options**: Impute missing values with user-defined constants.
+   - Compatibility with both numeric and categorical data.
+
+3. **Efficient Pipeline Management:**
+   - Create workflows to manage sequential imputation steps.
+   - Save, export, and reuse pipelines for consistent data handling across projects.
+   - Reapply pipelines to new datasets for efficient data processing.
+
+4. **AI-Driven Insights:**
+   - Integration with AI to generate summaries and recommendations.
+   - Tailored suggestions based on statistical comparisons to optimize imputation techniques.
+
+5. **Advanced Statistical Analysis:**
+   - Compare original and imputed data using metrics such as:
+     - Mean, median, and standard deviation.
+     - KDE overlap and Kolmogorov-Smirnov (KS) statistics.
+     - Skewness and kurtosis.
+   - Correlation analysis to identify relationships between columns.
+
+6. **Data Export Options:**
+   - Download imputed datasets in CSV format for further analysis or integration with downstream workflows.
+
+Use Cases
+---------
+
+The toolkit is well-suited for a variety of scenarios, including:
+
+- **Survey Data Cleaning:**
+  Handle missing responses in survey datasets to maintain data integrity.
+
+- **Machine Learning Preparation:**
+  Ensure datasets are ready for predictive modeling by addressing missing values systematically.
+
+- **Statistical Research:**
+  Compare imputation techniques and assess their impact on analysis results.
+
+By integrating visualization, imputation, and analysis into a single platform, **ImputeVSS** aims to empower users to handle missing data with confidence and precision.

@@ -1,0 +1,24 @@
+API Reference
+=============
+
+Routes
+------
+
+1. **GET /**:
+   - Renders the main page.
+
+2. **POST /process-dataset**:
+   - Uploads a CSV file and processes missing data.
+
+3. **POST /impute**:
+   - Applies imputation to a specific column.
+
+4. **POST /impute-dataset**:
+   - Applies imputation to the entire dataset.
+
+5. **POST /generate_summary**:
+   - Sends statistics to Ollama and retrieves AI recommendations.
+
+6. **GET /download-imputed-csv**:
+   - Downloads the imputed dataset as a CSV file.
+

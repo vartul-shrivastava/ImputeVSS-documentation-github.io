@@ -1,0 +1,28 @@
+Usage Guide
+===========
+
+1. **Uploading a Dataset:**
+   - Navigate to the application.
+   - Click the **Upload CSV** button in the navigation bar.
+   - Select your CSV file and click **Load Dataset**.
+   - View missing data heatmaps and column statistics.
+
+2. **Applying Imputation:**
+   - Select a column or choose to impute the entire dataset.
+   - Choose an imputation method from the dropdown menu.
+   - If applicable, provide a constant value for the imputation.
+   - Click **Apply Imputation** or **Impute Dataset**.
+
+3. **Saving and Managing Pipelines:**
+   - Save the sequence of imputation steps using **Export Pipeline**.
+   - Load a previously saved pipeline with **Import Pipeline**.
+   - Apply the loaded pipeline to your dataset.
+
+4. **AI Summaries:**
+   - Customize the prompt (optional).
+   - Select an AI model from the dropdown menu.
+   - Generate recommendations using **Get AI Recommendation**.
+
+5. **Downloading the Dataset:**
+   - Once imputations are complete, click **Download CSV** to export the dataset.
+

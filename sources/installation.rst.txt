@@ -1,0 +1,137 @@
+Installation
+============
+
+This section provides a detailed guide to setting up and installing ImputeVSS on your local system. Follow the instructions carefully to ensure a smooth setup and avoid potential issues.
+
+System Requirements
+-------------------
+
+Before installing ImputeVSS, ensure that your system meets the following prerequisites:
+
+1. Python 3.12 or higher  
+   - Python serves as the core programming language for ImputeVSS.  
+   - Download and install the latest version of Python from the [official Python website](https://www.python.org/downloads/).
+
+2. Ollama Desktop
+   - Install Ollama from https://ollama.com/ and ensure it is running on your system. Also install python package of Ollama in your environment.
+
+Dependencies
+------------
+
+ImputeVSS relies on a range of Python libraries for its core functionalities. These libraries are listed in the `requirements.txt` file. Install the dependencies using the following command:
+
+.. code-block:: bash
+
+   pip install -r requirements.txt
+
+Key Dependencies
+-----------------
+
+The primary libraries required for ImputeVSS include:
+
+- Flask: A lightweight web framework for building the web interface.
+- pandas: Used for data manipulation and analysis.
+- numpy: Provides support for numerical operations and array processing.
+- scikit-learn: Implements advanced imputation methods such as KNN and MICE.
+- scipy: Supports statistical computations for analysis.
+- ollama: Enables integration with AI models for generating imputation recommendations.
+
+For a complete list of dependencies, refer to the `requirements.txt` file included in the project.
+
+File Structure
+--------------
+
+Organize your project directory as follows to maintain clarity and enable seamless development:
+
+.. code-block:: text
+
+   imputevss/
+   ├── app.py                # Main application file
+   ├── requirements.txt      # Dependency list
+   ├── static/               # Static files (CSS, JS, images)
+   │   ├── css/              # Stylesheets for the UI
+   │   ├── js/               # JavaScript files
+   │   ├── images/           # Images and logos
+   └── templates/            # HTML templates
+       ├── index.html        # Main HTML page
+
+Step-by-Step Installation Guide
+-------------------------------
+
+Follow these steps to set up ImputeVSS:
+
+1. Clone the Repository from GitHub.
+
+2. Set Up a Virtual Environment (Optional but Recommended)  
+   A virtual environment ensures isolation of dependencies for the project.
+
+   .. code-block:: bash
+
+      python -m venv venv
+      source venv/bin/activate      # On Linux/Mac
+      venv\Scripts\activate         # On Windows
+
+3. Install Dependencies  
+   Install all required libraries by running the following command:
+
+   .. code-block:: bash
+
+      pip install -r requirements.txt
+
+4. Verify Installation  
+   Test that all dependencies are correctly installed by starting the Flask application:
+
+   .. code-block:: bash
+
+      python app.py
+
+   You should see an output indicating that the application is running (e.g., "Running on http://127.0.0.1:5000"). Open this URL in your web browser to access ImputeVSS.
+
+Optional Steps
+--------------
+
+Configuring AI Integration with Ollama
+--------------------------------------
+
+1. Ensure that Ollama is installed on your system.  
+
+2. Verify that Ollama is running by executing in your environment console:
+
+   .. code-block:: bash
+
+      ollama list
+
+   If the command outputs a list of models, Ollama is configured correctly.
+
+3. Pull the model(s) from Ollama by running:
+
+   .. code-block:: bash
+
+      ollama pull <model-name>
+
+3. In the ImputeVSS interface, use the "Check AI Dependency" button to confirm integration.
+
+Customizing the Application
+---------------------------
+
+- You can modify the Flask configuration (e.g., secret keys, upload folders) in the `app.py` file to suit your requirements.
+- For front-end customization, edit the files in the `static/` and `templates/` directories.
+
+Troubleshooting Installation
+----------------------------
+
+1. Missing Dependencies  
+   If any required library fails to install:
+   - Ensure that Python and pip are correctly installed and updated.
+   - Run `pip install <package_name>` to manually install the missing dependency.
+
+2. Flask Server Not Starting  
+   - Check for errors in the terminal.
+   - Ensure the correct Python version is being used.
+   - If you are using a virtual environment, activate it before running the application.
+
+3. Ollama Errors  
+   - Ensure Ollama is installed and running on your system.
+   - Use the "Check AI Dependency" feature to verify connectivity.
+
+Once all steps are completed, you are ready to use ImputeVSS for data imputation and analysis!
